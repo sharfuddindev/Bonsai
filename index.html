@@ -1,0 +1,1010 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head><script src="css/e.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bonsai - Oasis of Serenity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#57b5e7',
+secondary: '#8dd3c7'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+body {
+font-family: 'Inter', sans-serif;
+}
+.hero-bg {
+background-image: url('img/hero.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+.fade-in {
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.bg-stone-50 {
+background-color: #fafaf9;
+}
+.text-stone-600 {
+color: #57534e;
+}
+.custom-checkbox {
+appearance: none;
+width: 1.25rem;
+height: 1.25rem;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+background: white;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background: #57b5e7;
+border-color: #57b5e7;
+}
+.custom-checkbox:checked::after {
+content: '✓';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+font-size: 0.75rem;
+font-weight: bold;
+}
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+height: 0;
+overflow: hidden;
+}
+.video-container iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+.language-active {
+background: white;
+color: #1f2937;
+box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.language-inactive {
+color: #6b7280;
+}
+</style>
+</head>
+<body class="bg-white">
+<header class="bg-white shadow-sm fixed w-full top-0 z-50" role="banner">
+<nav class="w-full px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Main navigation">
+<div class="flex justify-between items-center h-16 lg:h-20">
+<div class="flex items-center">
+<a href="#home" class="font-['Pacifico'] text-xl lg:text-2xl text-gray-800 hover:text-primary transition-colors cursor-pointer" aria-label="Bonsai Residences Home">Bonsai</a>
+</div>
+<div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+<a href="#home" class="text-sm lg:text-base text-gray-700 hover:text-primary transition-colors font-medium cursor-pointer">Home</a>
+<a href="#designer" class="text-sm lg:text-base text-gray-700 hover:text-primary transition-colors font-medium cursor-pointer">Designer</a>
+<a href="#serenity" class="text-sm lg:text-base text-gray-700 hover:text-primary transition-colors font-medium cursor-pointer">Serenity</a>
+<a href="#project" class="text-sm lg:text-base text-gray-700 hover:text-primary transition-colors font-medium cursor-pointer">Project</a>
+<a href="#brochure" class="text-sm lg:text-base text-gray-700 hover:text-primary transition-colors font-medium cursor-pointer">Brochure</a>
+<a href="#contact" class="text-sm lg:text-base text-gray-700 hover:text-primary transition-colors font-medium cursor-pointer">Contact</a>
+</div>
+<div class="flex items-center space-x-3 lg:space-x-4">
+<div class="hidden sm:flex items-center space-x-1 bg-gray-100 rounded-full p-1">
+<button id="lang-en" class="px-3 py-1 text-xs lg:text-sm rounded-full font-medium transition-all language-active cursor-pointer">EN</button>
+<button id="lang-ar" class="px-3 py-1 text-xs lg:text-sm rounded-full font-medium transition-all language-inactive hover:text-primary cursor-pointer">AR</button>
+<button id="lang-ja" class="px-3 py-1 text-xs lg:text-sm rounded-full font-medium transition-all language-inactive hover:text-primary cursor-pointer">日本語</button>
+</div>
+<button class="md:hidden w-8 h-8 flex items-center justify-center text-gray-700 hover:text-primary transition-colors cursor-pointer" aria-label="Open mobile menu">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</div>
+</nav>
+</header>
+<main class="pt-16 lg:pt-20" role="main">
+<section id="home" class="hero-bg min-h-screen flex items-center" aria-label="Hero section">
+<div class="w-full px-4 sm:px-6 lg:px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] py-8 lg:py-0">
+<div class="fade-in text-center lg:text-left">
+<h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-800 mb-4 lg:mb-6 leading-tight">
+<span data-en="Oasis of" data-ar="واحة" data-ja="オアシス">Oasis of</span><br>
+<span class="text-primary" data-en="Serenity" data-ar="الهدوء" data-ja="静寂">Serenity</span>
+</h1>
+<p class="text-base sm:text-lg text-gray-600 mb-6 lg:mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0" data-en="Experience the perfect harmony between Japanese design philosophy and modern living. Where every detail speaks the language of tranquility and sophistication." data-ar="اختبر التناغم المثالي بين فلسفة التصميم اليابانية والحياة العصرية. حيث تتحدث كل التفاصيل بلغة الهدوء والرقي." data-ja="日本のデザイン哲学とモダンな暮らしの完璧な調和を体験してください。すべての細部が静寂と洗練の言葉を語ります。">
+Experience the perfect harmony between Japanese design philosophy and modern living. Where every detail speaks the language of tranquility and sophistication.
+</p>
+<div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start">
+<button class="!rounded-button whitespace-nowrap bg-primary text-white px-6 lg:px-8 py-3 lg:py-4 hover:bg-opacity-90 transition-all text-sm lg:text-base font-medium shadow-lg hover:shadow-xl cursor-pointer" aria-label="Explore Bonsai project details" data-en="Explore Project" data-ar="استكشف المشروع" data-ja="プロジェクトを探索">
+Explore Project
+</button>
+<button class="!rounded-button whitespace-nowrap border border-gray-300 text-gray-700 px-6 lg:px-8 py-3 lg:py-4 hover:bg-gray-50 transition-all text-sm lg:text-base font-medium cursor-pointer" aria-label="Watch project video" data-en="Watch Video" data-ar="شاهد الفيديو" data-ja="ビデオを見る">
+Watch Video
+</button>
+</div>
+</div>
+<div class="hidden lg:block"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="fade-in text-center mb-16">
+<h2 class="text-4xl font-light text-gray-800 mb-6" data-en="Serenity Video" data-ar="فيديو الهدوء" data-ja="静寂のビデオ">Serenity Video</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto" data-en="Discover the essence of our Japanese-inspired design philosophy through this immersive journey." data-ar="اكتشف جوهر فلسفة التصميم المستوحاة من اليابان من خلال هذه الرحلة الغامرة." data-ja="この没入型の旅を通じて、日本からインスピレーションを得たデザイン哲学の本質をご覧ください。">
+Discover the essence of our Japanese-inspired design philosophy through this immersive journey.
+</p>
+</div>
+<div class="fade-in max-w-4xl mx-auto">
+<div class="video-container rounded-2xl overflow-hidden shadow-2xl">
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</section>
+<section id="designer" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="fade-in mb-20">
+<div class="grid lg:grid-cols-5 gap-12 items-start">
+<div class="lg:col-span-2">
+<h2 class="text-5xl font-light text-gray-800 mb-8 tracking-wide" data-en="DESIGNER TOUCHES" data-ar="لمسات المصمم" data-ja="デザイナーの タッチ">DESIGNER<br>TOUCHES</h2>
+<p class="text-gray-600 leading-relaxed text-lg" data-en="We don't just build residential units — we craft spaces with a distinct spirit, born from meticulous attention to detail. In every corner, every texture, and every finish, we embed thoughtful design and care that transforms living into an exceptional experience beyond the ordinary." data-ar="نحن لا نبني وحدات سكنية فحسب — بل نصنع مساحات بروح مميزة، نابعة من الاهتمام الدقيق بالتفاصيل. في كل زاوية وكل ملمس وكل لمسة أخيرة، نضع تصميماً مدروساً وعناية تحول المعيشة إلى تجربة استثنائية تتجاوز المألوف." data-ja="私たちは単に住宅ユニットを建設するだけではありません。細部への細心の注意から生まれた独特の精神を持つ空間を創造します。すべての角、すべての質感、すべての仕上げに、生活を普通を超えた特別な体験に変える思慮深いデザインとケアを込めています。">
+We don't just build residential units — we craft spaces with a distinct spirit, born from meticulous attention to detail. In every corner, every texture, and every finish, we embed thoughtful design and care that transforms living into an exceptional experience beyond the ordinary.
+</p>
+</div>
+<div class="lg:col-span-3">
+<img src="../../static.readdy.ai/image/8b316a119a8a2d6c8b4af9b8a65c7b9d/1b47cd0090cbea701b3b19414565201f.jpg"
+alt="Designer touches showcase featuring copper, wood and stone elements in modern Japanese-inspired interiors"
+class="w-full h-auto rounded-lg shadow-lg object-cover">
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="fade-in text-center">
+<div class="mb-8">
+<div class="w-16 h-16 flex items-center justify-center bg-orange-50 rounded-full mx-auto mb-6">
+<i class="ri-copper-coin-line text-orange-600 text-2xl"></i>
+</div>
+<h3 class="text-2xl font-light text-gray-800 mb-4 tracking-wide" data-en="Copper Touch" data-ar="لمسة النحاس" data-ja="銅のタッチ">Copper Touch</h3>
+<p class="text-gray-600 leading-relaxed" data-en="A touch of copper adds a warm glow and timeless elegance — enriching the space with refined detail and evoking the luxury of traditional craftsmanship." data-ar="لمسة من النحاس تضيف دفئاً متوهجاً وأناقة خالدة — تثري المساحة بتفاصيل راقية وتستحضر فخامة الحرفية التقليدية." data-ja="銅のタッチが温かい輝きと時代を超えた優雅さを加え、洗練されたディテールで空間を豊かにし、伝統的な職人技の贅沢さを呼び起こします。">
+A touch of copper adds a warm glow and timeless elegance — enriching the space with refined detail and evoking the luxury of traditional craftsmanship.
+</p>
+</div>
+</div>
+<div class="fade-in text-center">
+<div class="mb-8">
+<div class="w-16 h-16 flex items-center justify-center bg-amber-50 rounded-full mx-auto mb-6">
+<i class="ri-leaf-line text-amber-700 text-2xl"></i>
+</div>
+<h3 class="text-2xl font-light text-gray-800 mb-4 tracking-wide" data-en="Wood Touch" data-ar="لمسة الخشب" data-ja="木のタッチ">Wood Touch</h3>
+<p class="text-gray-600 leading-relaxed" data-en="Natural wood brings warmth and nostalgia into the space, creating a quiet harmony that connects the resident to nature and deepens the sense of serenity." data-ar="الخشب الطبيعي يجلب الدفء والحنين إلى المساحة، مما يخلق تناغماً هادئاً يربط الساكن بالطبيعة ويعمق الشعور بالهدوء." data-ja="天然木が空間に温かさと郷愁をもたらし، 住む人を自然とつなぎ、静寂の感覚を深める静かな調和を創り出します。">
+Natural wood brings warmth and nostalgia into the space, creating a quiet harmony that connects the resident to nature and deepens the sense of serenity.
+</p>
+</div>
+</div>
+<div class="fade-in text-center">
+<div class="mb-8">
+<div class="w-16 h-16 flex items-center justify-center bg-stone-50 rounded-full mx-auto mb-6">
+<i class="ri-building-2-line text-stone-600 text-2xl"></i>
+</div>
+<h3 class="text-2xl font-light text-gray-800 mb-4 tracking-wide" data-en="Stone Touch" data-ar="لمسة الحجر" data-ja="石のタッチ">Stone Touch</h3>
+<p class="text-gray-600 leading-relaxed" data-en="A touch of stone gives the unit a sense of permanence and solid strength — adding visual depth and a natural balance that reflects the quiet beauty of simplicity and earth." data-ar="لمسة من الحجر تمنح الوحدة شعوراً بالدوام والقوة الصلبة — تضيف عمقاً بصرياً وتوازناً طبيعياً يعكس الجمال الهادئ للبساطة والأرض." data-ja="石のタッチがユニットに永続性と確固たる強さを与え、シンプルさと大地の静かな美しさを反映する視覚的な深さと自然なバランスを加えます。">
+A touch of stone gives the unit a sense of permanence and solid strength — adding visual depth and a natural balance that reflects the quiet beauty of simplicity and earth.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="serenity" class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="fade-in">
+<h2 class="text-4xl font-light text-gray-800 mb-8" data-en="Bonsai Philosophy" data-ar="فلسفة البونساي" data-ja="盆栽の哲学">Bonsai Philosophy</h2>
+<div class="space-y-6 text-gray-600 leading-relaxed">
+<p data-en="Bonsai is a traditional Japanese art that involves growing trees in small containers. It is an art that blends horticulture, design, and meditation, requiring patience, precision, and skill. It is a craft passed down from generation to generation, rooted in a spirit of respect and contemplation." data-ar="البونساي هو فن ياباني تقليدي يتضمن زراعة الأشجار في حاويات صغيرة. إنه فن يمزج بين البستنة والتصميم والتأمل، ويتطلب الصبر والدقة والمهارة. إنها حرفة تنتقل من جيل إلى جيل، متجذرة في روح الاحترام والتأمل." data-ja="盆栽は小さな容器で樹木を育てる日本の伝統芸術です。園芸、デザイン、瞑想を融合させた芸術で、忍耐、精密さ、技術を必要とします。敬意と瞑想の精神に根ざした、世代から世代へと受け継がれる工芸です。">
+Bonsai is a traditional Japanese art that involves growing trees in small containers. It is an art that blends horticulture, design, and meditation, requiring patience, precision, and skill. It is a craft passed down from generation to generation, rooted in a spirit of respect and contemplation.
+</p>
+<p data-en="This quiet passion has become a reflection of refined taste and a part of the Japanese cultural identity, where great beauty is found in small details. Bonsai is often practiced by businessmen and members of the social elite, as owning a bonsai tree in Japan is considered a symbol of sophistication, calm presence, and deep appreciation for silent beauty." data-ar="لقد أصبح هذا الشغف الهادئ انعكاساً للذوق الراقي وجزءاً من الهوية الثقافية اليابانية، حيث يوجد الجمال العظيم في التفاصيل الصغيرة. غالباً ما يمارس رجال الأعمال وأعضاء النخبة الاجتماعية البونساي، حيث يُعتبر امتلاك شجرة بونساي في اليابان رمزاً للرقي والحضور الهادئ والتقدير العميق للجمال الصامت." data-ja="この静かな情熱は洗練された趣味の反映となり、日本の文化的アイデンティティの一部となっています。小さな細部に大きな美しさを見出すのです。盆栽はしばしばビジネスマンや社会エリートによって実践されており、日本で盆栽を所有することは洗練、静かな存在感、静寂の美への深い感謝の象徴とされています。">
+This quiet passion has become a reflection of refined taste and a part of the Japanese cultural identity, where great beauty is found in small details. Bonsai is often practiced by businessmen and members of the social elite, as owning a bonsai tree in Japan is considered a symbol of sophistication, calm presence, and deep appreciation for silent beauty.
+</p>
+<div class="text-sm text-gray-400 font-light leading-relaxed mt-8">
+盆栽は、小さな鉢の中で樹木を育てる日本の伝統芸術です。それは、栽培と造形、そして静かな瞑想を融合させた深い芸術であり、忍耐と精密さ、そして高度な技が求められます。この芸術は、世代を超えて受け継がれ、敬意と静寂を大切にする精神とともに発展してきました。
+</div>
+</div>
+<a href="#serenity" class="inline-flex items-center text-primary hover:text-opacity-80 transition-colors mt-8 cursor-pointer" data-en="Learn More About Serenity" data-ar="تعرف على المزيد عن الهدوء" data-ja="静寂についてもっと学ぶ">
+Learn More About Serenity
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<div class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=traditional%20Japanese%20bonsai%20tree%20in%20elegant%20ceramic%20pot%2C%20minimalist%20zen%20garden%20setting%2C%20soft%20natural%20lighting%2C%20peaceful%20meditation%20space%2C%20traditional%20Japanese%20interior%20design%20elements%2C%20clean%20aesthetic%2C%20professional%20photography&amp;width=600&amp;height=700&amp;seq=bonsai001&amp;orientation=portrait"
+alt="Bonsai Tree" class="w-full h-auto rounded-2xl shadow-lg object-cover">
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="fade-in text-center mb-16">
+<h2 class="text-4xl font-light text-gray-800 mb-6" data-en="Payment Options" data-ar="خيارات الدفع" data-ja="支払いオプション">Payment Options</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto" data-en="Flexible payment plans designed to make your investment in Bonsai accessible and convenient." data-ar="خطط دفع مرنة مصممة لجعل استثمارك في بونساي سهل الوصول ومريح." data-ja="Bonsaiへの投資をアクセスしやすく便利にするための柔軟な支払いプラン。">
+Flexible payment plans designed to make your investment in Bonsai accessible and convenient.
+</p>
+</div>
+<div class="fade-in max-w-4xl mx-auto mb-20">
+<img src="../../static.readdy.ai/image/8b316a119a8a2d6c8b4af9b8a65c7b9d/1caf565506eb56d40302db7ece3cafbb.jpg"
+alt="Bonsai Payment Options - Cash and Installment Plans"
+class="w-full h-auto rounded-2xl shadow-lg object-cover">
+</div>
+<div class="fade-in text-center mb-16">
+<h2 class="text-4xl font-light text-gray-800 mb-6" data-en="Attractive Investment" data-ar="استثمار جذاب" data-ja="魅力的な投資">Attractive Investment</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto" data-en="Discover the exceptional investment opportunities that make Bonsai the perfect choice for discerning investors." data-ar="اكتشف الفرص الاستثمارية الاستثنائية التي تجعل بونساي الخيار المثالي للمستثمرين المميزين." data-ja="目の肥えた投資家にとってBonsaiが完璧な選択となる卓越した投資機会をご発見ください。">
+Discover the exceptional investment opportunities that make Bonsai the perfect choice for discerning investors.
+</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="fade-in bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6">
+<i class="ri-checkbox-circle-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-gray-800 mb-4" data-en="Phased Pricing" data-ar="التسعير المرحلي" data-ja="段階的な価格設定">Phased Pricing</h3>
+<p class="text-gray-600" data-en="Flexible payment structure designed to accommodate various investment preferences and financial planning strategies." data-ar="هيكل دفع مرن مصمم لاستيعاب تفضيلات الاستثمار المختلفة واستراتيجيات التخطيط المالي." data-ja="さまざまな投資の好みと財務計画戦略に対応するよう設計された柔軟な支払い構造。">Flexible payment structure designed to accommodate various investment preferences and financial planning strategies.</p>
+</div>
+<div class="fade-in bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-lg mb-6">
+<i class="ri-puzzle-2-line text-secondary text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-gray-800 mb-4" data-en="Flexible Payment Plan" data-ar="خطة دفع مرنة" data-ja="柔軟な支払いプラン">Flexible Payment Plan</h3>
+<p class="text-gray-600" data-en="Customizable payment options that adapt to your financial timeline and investment goals." data-ar="خيارات دفع قابلة للتخصيص تتكيف مع جدولك المالي الزمني وأهداف الاستثمار." data-ja="あなたの財務スケジュールと投資目標に適応するカスタマイズ可能な支払いオプション。">Customizable payment options that adapt to your financial timeline and investment goals.</p>
+</div>
+<div class="fade-in bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6">
+<i class="ri-refresh-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-gray-800 mb-4" data-en="Small Desired Units" data-ar="وحدات صغيرة مرغوبة" data-ja="コンパクトな理想的ユニット">Small Desired Units</h3>
+<p class="text-gray-600" data-en="Compact, efficiently designed living spaces that maximize value and minimize maintenance requirements." data-ar="مساحات معيشة مدمجة ومصممة بكفاءة تحقق أقصى قيمة وتقلل متطلبات الصيانة." data-ja="価値を最大化し、メンテナンス要件を最小限に抑えるコンパクトで効率的に設計された生活空間。">Compact, efficiently designed living spaces that maximize value and minimize maintenance requirements.</p>
+</div>
+<div class="fade-in bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-lg mb-6">
+<i class="ri-line-chart-line text-secondary text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-gray-800 mb-4" data-en="Promising Rental Yields" data-ar="عوائد إيجارية واعدة" data-ja="有望な賃貸利回り">Promising Rental Yields</h3>
+<p class="text-gray-600" data-en="Excellent return on investment potential with strong rental demand in this prime location." data-ar="إمكانية عائد ممتاز على الاستثمار مع طلب قوي للإيجار في هذا الموقع المتميز." data-ja="この一等地での強い賃貸需要により、優れた投資収益の可能性。">Excellent return on investment potential with strong rental demand in this prime location.</p>
+</div>
+<div class="fade-in bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6">
+<i class="ri-links-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-gray-800 mb-4" data-en="Rental Management" data-ar="إدارة الإيجار" data-ja="賃貸管理">Rental Management</h3>
+<p class="text-gray-600" data-en="Professional property management services to ensure hassle-free rental income generation." data-ar="خدمات إدارة الممتلكات المهنية لضمان توليد دخل إيجار بلا متاعب." data-ja="手間のかからない賃貸収入創出を確保するプロの不動産管理サービス。">Professional property management services to ensure hassle-free rental income generation.</p>
+</div>
+<div class="fade-in bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-lg mb-6">
+<i class="ri-map-pin-line text-secondary text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-gray-800 mb-4" data-en="Metro Proximity" data-ar="قرب المترو" data-ja="地下鉄近接">Metro Proximity</h3>
+<p class="text-gray-600" data-en="Strategic location with excellent connectivity to major transportation networks and city centers." data-ar="موقع استراتيجي مع اتصال ممتاز بشبكات النقل الرئيسية ومراكز المدن." data-ja="主要な交通網と都市中心部への優れた接続性を持つ戦略的立地。">Strategic location with excellent connectivity to major transportation networks and city centers.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=modern%20residential%20building%20amenities%20showcase%2C%20two%20women%20in%20traditional%20Middle%20Eastern%20dress%20sitting%20on%20outdoor%20steps%2C%20contemporary%20architecture%20with%20clean%20lines%2C%20peaceful%20courtyard%20setting%2C%20natural%20lighting%2C%20professional%20lifestyle%20photography&amp;width=600&amp;height=800&amp;seq=amenities001&amp;orientation=portrait"
+alt="Amenities" class="w-full h-auto rounded-2xl shadow-lg object-cover">
+</div>
+<div class="fade-in">
+<h2 class="text-4xl font-light text-gray-800 mb-12" data-en="Amenities" data-ar="المرافق" data-ja="アメニティ">Amenities</h2>
+<div class="space-y-8">
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg flex-shrink-0">
+<i class="ri-leaf-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-medium text-gray-800 mb-2" data-en="Serenity" data-ar="الهدوء" data-ja="静寂">Serenity</h3>
+<p class="text-sm text-gray-600" data-en="Japanese Gardens • Scented Hallways • Japanese Tearoom" data-ar="الحدائق اليابانية • الممرات المعطرة • غرفة الشاي اليابانية" data-ja="日本庭園 • 香り高い廊下 • 日本茶室">Japanese Gardens • Scented Hallways • Japanese Tearoom</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-secondary bg-opacity-10 rounded-lg flex-shrink-0">
+<i class="ri-drop-line text-secondary"></i>
+</div>
+<div>
+<h3 class="font-medium text-gray-800 mb-2" data-en="Highlights" data-ar="المميزات" data-ja="ハイライト">Highlights</h3>
+<p class="text-sm text-gray-600" data-en="Water Features • Mist Cooling • Covered Gardens" data-ar="عناصر مائية • تبريد بالرذاذ • حدائق مغطاة" data-ja="水の要素 • ミスト冷却 • 屋根付き庭園">Water Features • Mist Cooling • Covered Gardens</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg flex-shrink-0">
+<i class="ri-movie-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-medium text-gray-800 mb-2" data-en="Entertainment" data-ar="الترفيه" data-ja="エンターテイメント">Entertainment</h3>
+<p class="text-sm text-gray-600" data-en="Cinema Room • PlayStation Room • Recreation Area" data-ar="غرفة سينما • غرفة بلايستيشن • منطقة ترفيهية" data-ja="シネマルーム • プレイステーションルーム • レクリエーションエリア">Cinema Room • PlayStation Room • Recreation Area</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-secondary bg-opacity-10 rounded-lg flex-shrink-0">
+<i class="ri-building-line text-secondary"></i>
+</div>
+<div>
+<h3 class="font-medium text-gray-800 mb-2" data-en="Amenities" data-ar="المرافق" data-ja="アメニティ">Amenities</h3>
+<p class="text-sm text-gray-600" data-en="Co-working Area • Reading Library • Clubhouse Lounge" data-ar="منطقة العمل المشترك • مكتبة القراءة • صالة النادي" data-ja="コワーキングエリア • 読書図書館 • クラブハウスラウンジ">Co-working Area • Reading Library • Clubhouse Lounge</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg flex-shrink-0">
+<i class="ri-service-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-medium text-gray-800 mb-2" data-en="Services" data-ar="الخدمات" data-ja="サービス">Services</h3>
+<p class="text-sm text-gray-600" data-en="Mini Market • Laundry Room • Delivery Lockers" data-ar="متجر صغير • غرفة الغسيل • خزائن التوصيل" data-ja="ミニマーケット • ランドリールーム • 配達ロッカー">Mini Market • Laundry Room • Delivery Lockers</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-secondary bg-opacity-10 rounded-lg flex-shrink-0">
+<i class="ri-home-smile-line text-secondary"></i>
+</div>
+<div>
+<h3 class="font-medium text-gray-800 mb-2" data-en="Features" data-ar="المميزات" data-ja="特徴">Features</h3>
+<p class="text-sm text-gray-600" data-en="Smart Home • 24/7 Security • Underground Parking" data-ar="منزل ذكي • أمن 24/7 • موقف تحت الأرض" data-ja="スマートホーム • 24時間セキュリティ • 地下駐車場">Smart Home • 24/7 Security • Underground Parking</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="fade-in text-center mb-16">
+<h2 class="text-4xl font-light text-gray-800 mb-6" data-en="Clubhouse" data-ar="النادي" data-ja="クラブハウス">Clubhouse</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto" data-en="Experience world-class facilities designed to enhance your lifestyle and well-being." data-ar="اختبر مرافق عالمية المستوى مصممة لتعزيز نمط حياتك ورفاهيتك." data-ja="あなたのライフスタイルと幸福を向上させるために設計された世界クラスの施設を体験してください。">
+Experience world-class facilities designed to enhance your lifestyle and well-being.
+</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="fade-in bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=traditional%20Japanese%20tea%20room%20interior%2C%20tatami%20mats%2C%20low%20wooden%20table%2C%20minimal%20zen%20design%2C%20natural%20lighting%2C%20peaceful%20meditation%20space%2C%20authentic%20cultural%20elements%2C%20clean%20aesthetic&amp;width=400&amp;height=250&amp;seq=tearoom001&amp;orientation=landscape"
+alt="Japanese Tea Room" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-medium text-gray-800 mb-3" data-en="Japanese Tea Room" data-ar="غرفة الشاي اليابانية" data-ja="日本茶室">Japanese Tea Room</h3>
+<p class="text-gray-600 text-sm" data-en="Traditional tea ceremony space featuring authentic tatami mats and cultural elements for a truly immersive experience." data-ar="مساحة حفل الشاي التقليدية التي تتميز بحصائر التاتامي الأصيلة والعناصر الثقافية لتجربة غامرة حقاً." data-ja="本格的な畳と文化的要素を特徴とした、真に没入感のある体験のための伝統的な茶道空間。">Traditional tea ceremony space featuring authentic tatami mats and cultural elements for a truly immersive experience.</p>
+</div>
+</div>
+<div class="fade-in bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=Japanese%20zen%20garden%20with%20carefully%20arranged%20stones%2C%20raked%20sand%20patterns%2C%20small%20bonsai%20trees%2C%20peaceful%20outdoor%20meditation%20space%2C%20traditional%20landscaping%2C%20serene%20atmosphere&amp;width=400&amp;height=250&amp;seq=garden001&amp;orientation=landscape"
+alt="Japanese Gardens" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-medium text-gray-800 mb-3" data-en="Japanese Gardens" data-ar="الحدائق اليابانية" data-ja="日本庭園">Japanese Gardens</h3>
+<p class="text-gray-600 text-sm" data-en="Meticulously designed outdoor zen gardens with traditional landscaping elements for contemplation and relaxation." data-ar="حدائق زين خارجية مصممة بعناية فائقة مع عناصر تنسيق الحدائق التقليدية للتأمل والاسترخاء." data-ja="瞑想とリラクゼーションのための伝統的な造園要素を持つ、細心に設計された屋外禅庭園。">Meticulously designed outdoor zen gardens with traditional landscaping elements for contemplation and relaxation.</p>
+</div>
+</div>
+<div class="fade-in bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=modern%20cinema%20room%20with%20comfortable%20seating%2C%20premium%20audio%20visual%20equipment%2C%20contemporary%20interior%20design%2C%20luxury%20entertainment%20space%2C%20professional%20lighting&amp;width=400&amp;height=250&amp;seq=cinema001&amp;orientation=landscape"
+alt="Cinema" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-medium text-gray-800 mb-3" data-en="Cinema" data-ar="السينما" data-ja="シネマ">Cinema</h3>
+<p class="text-gray-600 text-sm" data-en="State-of-the-art entertainment facility with premium audio-visual equipment and comfortable seating arrangements." data-ar="مرفق ترفيهي حديث مع معدات صوتية ومرئية متميزة وترتيبات جلوس مريحة." data-ja="プレミアムなオーディオビジュアル機器と快適な座席配置を備えた最先端のエンターテイメント施設。">State-of-the-art entertainment facility with premium audio-visual equipment and comfortable seating arrangements.</p>
+</div>
+</div>
+<div class="fade-in bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=modern%20library%20interior%20with%20extensive%20book%20collection%2C%20comfortable%20reading%20chairs%2C%20natural%20lighting%2C%20quiet%20study%20areas%2C%20contemporary%20design%2C%20peaceful%20atmosphere&amp;width=400&amp;height=250&amp;seq=library001&amp;orientation=landscape"
+alt="Library" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-medium text-gray-800 mb-3" data-en="Library" data-ar="المكتبة" data-ja="図書館">Library</h3>
+<p class="text-gray-600 text-sm" data-en="Extensive collection of books and quiet study areas designed to inspire learning and intellectual growth." data-ar="مجموعة واسعة من الكتب ومناطق دراسة هادئة مصممة لإلهام التعلم والنمو الفكري." data-ja="学習と知的成長を促すよう設計された豊富な書籍コレクションと静かな学習エリア。">Extensive collection of books and quiet study areas designed to inspire learning and intellectual growth.</p>
+</div>
+</div>
+<div class="fade-in bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=modern%20co-working%20space%20with%20Japanese%20design%20influence%2C%20clean%20workstations%2C%20natural%20lighting%2C%20minimalist%20furniture%2C%20productive%20environment%2C%20contemporary%20office%20design&amp;width=400&amp;height=250&amp;seq=coworking001&amp;orientation=landscape"
+alt="Co-working Space" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-medium text-gray-800 mb-3" data-en="Co-working Space" data-ar="مساحة العمل المشتركة" data-ja="コワーキングスペース">Co-working Space</h3>
+<p class="text-gray-600 text-sm" data-en="Modern workspace inspired by Japanese balance between focus and flow, perfect for productivity and collaboration." data-ar="مساحة عمل حديثة مستوحاة من التوازن الياباني بين التركيز والتدفق، مثالية للإنتاجية والتعاون." data-ja="集中と流れの日本的バランスにインスパイアされたモダンなワークスペース、生産性とコラボレーションに最適。">Modern workspace inspired by Japanese balance between focus and flow, perfect for productivity and collaboration.</p>
+</div>
+</div>
+<div class="fade-in bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=luxury%20recreation%20area%20with%20comfortable%20lounge%20seating%2C%20modern%20interior%20design%2C%20relaxation%20space%2C%20premium%20amenities%2C%20serene%20atmosphere%2C%20contemporary%20furniture&amp;width=400&amp;height=250&amp;seq=recreation001&amp;orientation=landscape"
+alt="Recreation Area" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-medium text-gray-800 mb-3" data-en="Recreation Area" data-ar="منطقة الترفيه" data-ja="レクリエーションエリア">Recreation Area</h3>
+<p class="text-gray-600 text-sm" data-en="Leisure facilities designed as a serene outlet for relaxation, featuring comfortable seating and calming ambiance." data-ar="مرافق الترفيه المصممة كمنفذ هادئ للاسترخاء، تتميز بمقاعد مريحة وأجواء مهدئة." data-ja="快適な座席と落ち着いた雰囲気を特徴とする、リラクゼーションのための静かなはけ口として設計されたレジャー施設。">Leisure facilities designed as a serene outlet for relaxation, featuring comfortable seating and calming ambiance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="fade-in text-center mb-16">
+<h2 class="text-4xl font-light text-gray-800 mb-6" data-en="Vibrant Location" data-ar="موقع نابض بالحياة" data-ja="活気ある立地">Vibrant Location</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto" data-en="Strategically positioned in the heart of the city with excellent connectivity and access to premium amenities." data-ar="يقع في موقع استراتيجي في قلب المدينة مع اتصال ممتاز ووصول إلى وسائل الراحة المتميزة." data-ja="優れた接続性とプレミアムアメニティへのアクセスを備えた、都市の中心部に戦略的に位置しています。">
+Strategically positioned in the heart of the city with excellent connectivity and access to premium amenities.
+</p>
+</div>
+<div class="fade-in">
+<div class="bg-gray-100 rounded-2xl h-96 flex items-center justify-center relative overflow-hidden" style="background-image: url('../../static.readdy.ai/image/8b316a119a8a2d6c8b4af9b8a65c7b9d/ceeb0265d71e438e01bc24e54d725f2e.jpg'); background-size: cover; background-position: center;">
+<div class="bg-white bg-opacity-90 p-8 rounded-xl shadow-lg max-w-md text-center">
+<h3 class="text-2xl font-medium text-gray-800 mb-4" data-en="Prime Location Benefits" data-ar="مزايا الموقع المميز" data-ja="一等地の利点">Prime Location Benefits</h3>
+<ul class="text-left space-y-2 text-gray-600">
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span data-en="Metro connectivity within 5 minutes" data-ar="اتصال المترو خلال 5 دقائق" data-ja="5分以内の地下鉄接続">Metro connectivity within 5 minutes</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span data-en="Shopping centers nearby" data-ar="مراكز التسوق في الجوار" data-ja="近くのショッピングセンター">Shopping centers nearby</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span data-en="Educational institutions" data-ar="المؤسسات التعليمية" data-ja="教育機関">Educational institutions</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span data-en="Healthcare facilities" data-ar="المرافق الصحية" data-ja="医療施設">Healthcare facilities</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="fade-in text-center mb-16">
+<h2 class="text-4xl font-light text-gray-800 mb-6" data-en="Our Team" data-ar="فريقنا" data-ja="私たちのチーム">Our Team</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto" data-en="Behind Bonsai stands a strategic alliance of leading specialized companies — each a pioneer in its field — united by a shared vision and collective expertise to craft an exceptional residential experience." data-ar="خلف بونساي يقف تحالف استراتيجي من الشركات المتخصصة الرائدة - كل منها رائدة في مجالها - متحدة برؤية مشتركة وخبرة جماعية لصياغة تجربة سكنية استثنائية." data-ja="Bonsaiの背後には、それぞれの分野のパイオニアである主要な専門企業の戦略的提携があり、共通のビジョンと集合的な専門知識によって結ばれ、例外的な住宅体験を創造しています。">
+Behind Bonsai stands a strategic alliance of leading specialized companies — each a pioneer in its field — united by a shared vision and collective expertise to craft an exceptional residential experience.
+</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="fade-in">
+<img src="../../static.readdy.ai/image/8b316a119a8a2d6c8b4af9b8a65c7b9d/930fcc24050ee299136489cafa320256.jpg"
+alt="Modern residential courtyard with Japanese design elements"
+class="w-full h-auto rounded-2xl shadow-lg object-cover">
+</div>
+<div class="fade-in">
+<p class="text-gray-600 leading-relaxed mb-12" data-en="One that embodies the highest standards of quality, innovation, and attention to detail, offering you a lifestyle defined by serenity and distinction." data-ar="واحد يجسد أعلى معايير الجودة والابتكار والاهتمام بالتفاصيل، ويقدم لك نمط حياة يتميز بالهدوء والتميز." data-ja="品質、革新性、細部への注意の最高基準を体現し、静寂と区別によって定義されるライフスタイルを提供します。">
+One that embodies the highest standards of quality, innovation, and attention to detail, offering you a lifestyle defined by serenity and distinction.
+</p>
+<div class="grid grid-cols-2 gap-8">
+<div class="text-center">
+<h4 class="text-xs uppercase tracking-wider text-gray-400 mb-4" data-en="Japanese Architect" data-ar="المهندس المعماري الياباني" data-ja="日本人建築家">Japanese Architect</h4>
+<div class="mb-4">
+<h3 class="font-medium text-gray-800 text-sm mb-1">KEIJI</h3>
+<h3 class="font-medium text-gray-800 text-sm mb-1">ASHIZAWA</h3>
+<h3 class="font-light text-gray-600 text-sm">DESIGN</h3>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-xs uppercase tracking-wider text-gray-400 mb-4" data-en="Developer" data-ar="المطور" data-ja="開発者">Developer</h4>
+<div class="mb-4 flex justify-center">
+<img src="https://readdy.ai/api/search-image?query=modern%20architectural%20development%20company%20logo%2C%20clean%20professional%20design%2C%20minimalist%20style%2C%20geometric%20elements%2C%20corporate%20branding&amp;width=120&amp;height=40&amp;seq=developer001&amp;orientation=landscape"
+alt="Alramz Developer Logo" class="h-8 object-contain">
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-xs uppercase tracking-wider text-gray-400 mb-4" data-en="Land Owner" data-ar="مالك الأرض" data-ja="土地所有者">Land Owner</h4>
+<div class="mb-4 flex justify-center">
+<img src="https://readdy.ai/api/search-image?query=real%20estate%20investment%20company%20logo%2C%20professional%20corporate%20design%2C%20modern%20minimalist%20style%2C%20luxury%20branding%20elements&amp;width=120&amp;height=40&amp;seq=landowner001&amp;orientation=landscape"
+alt="Land Owner Logo" class="h-8 object-contain">
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-xs uppercase tracking-wider text-gray-400 mb-4" data-en="Project Name" data-ar="اسم المشروع" data-ja="プロジェクト名">Project Name</h4>
+<div class="mb-4">
+<div class="w-8 h-8 bg-gray-800 rounded-full mx-auto flex items-center justify-center">
+<span class="text-white text-xs font-bold">B</span>
+</div>
+<h3 class="font-light text-gray-800 text-sm mt-2">BONSAI</h3>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-xs uppercase tracking-wider text-gray-400 mb-4" data-en="Saudi Architect" data-ar="المهندس المعماري السعودي" data-ja="サウジ建築家">Saudi Architect</h4>
+<div class="mb-4 flex justify-center">
+<img src="https://readdy.ai/api/search-image?query=ITAEC%20architectural%20firm%20logo%2C%20professional%20Saudi%20company%20branding%2C%20clean%20corporate%20design%2C%20construction%20industry&amp;width=120&amp;height=40&amp;seq=itaec001&amp;orientation=landscape"
+alt="ITAEC Logo" class="h-8 object-contain">
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-xs uppercase tracking-wider text-gray-400 mb-4" data-en="Brand Owner" data-ar="مالك العلامة التجارية" data-ja="ブランドオーナー">Brand Owner</h4>
+<div class="mb-4 flex justify-center">
+<img src="https://readdy.ai/api/search-image?query=Notions%20brand%20consultancy%20logo%2C%20creative%20agency%20branding%2C%20modern%20professional%20design%2C%20brand%20development%20company&amp;width=120&amp;height=40&amp;seq=notions001&amp;orientation=landscape"
+alt="Notions Logo" class="h-8 object-contain">
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-xs uppercase tracking-wider text-gray-400 mb-4" data-en="Fund Manager" data-ar="مدير الصندوق" data-ja="ファンドマネージャー">Fund Manager</h4>
+<div class="mb-4 flex justify-center">
+<img src="https://readdy.ai/api/search-image?query=Binar%20investment%20fund%20management%20logo%2C%20financial%20services%20branding%2C%20professional%20corporate%20design%2C%20investment%20company&amp;width=120&amp;height=40&amp;seq=binar001&amp;orientation=landscape"
+alt="Binar Fund Manager Logo" class="h-8 object-contain">
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-xs uppercase tracking-wider text-gray-400 mb-4" data-en="Exclusive Broker" data-ar="الوسيط الحصري" data-ja="独占ブローカー">Exclusive Broker</h4>
+<div class="mb-4 flex justify-center">
+<img src="https://readdy.ai/api/search-image?query=aqarmap%20real%20estate%20platform%20logo%2C%20property%20technology%20company%20branding%2C%20modern%20digital%20services%20design&amp;width=120&amp;height=40&amp;seq=aqarmap001&amp;orientation=landscape"
+alt="Aqarmap Logo" class="h-8 object-contain">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="fade-in text-center mb-16">
+<h2 class="text-4xl font-light text-gray-800 mb-6" data-en="Gallery" data-ar="المعرض" data-ja="ギャラリー">Gallery</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto" data-en="Explore the stunning architecture and thoughtful design details that define the Bonsai experience." data-ar="استكشف الهندسة المعمارية المذهلة وتفاصيل التصميم المدروسة التي تحدد تجربة بونساي." data-ja="Bonsai体験を定義する素晴らしい建築と思慮深いデザインの詳細をご覧ください。">
+Explore the stunning architecture and thoughtful design details that define the Bonsai experience.
+</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=modern%20residential%20building%20exterior%20with%20Japanese%20design%20elements%2C%20clean%20white%20architecture%2C%20geometric%20forms%2C%20natural%20lighting%2C%20contemporary%20minimalist%20style&amp;width=400&amp;height=300&amp;seq=gallery001&amp;orientation=landscape"
+alt="Building Exterior" class="w-full h-64 object-cover rounded-xl hover:scale-105 transition-transform cursor-pointer">
+</div>
+<div class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=modern%20apartment%20interior%20with%20Japanese%20minimalist%20design%2C%20clean%20lines%2C%20natural%20materials%2C%20spacious%20living%20area%2C%20contemporary%20furniture&amp;width=400&amp;height=300&amp;seq=gallery002&amp;orientation=landscape"
+alt="Interior Living Space" class="w-full h-64 object-cover rounded-xl hover:scale-105 transition-transform cursor-pointer">
+</div>
+<div class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=Japanese%20zen%20garden%20with%20water%20features%2C%20carefully%20arranged%20stones%2C%20peaceful%20outdoor%20space%2C%20traditional%20landscaping%2C%20serene%20atmosphere&amp;width=400&amp;height=300&amp;seq=gallery003&amp;orientation=landscape"
+alt="Zen Garden" class="w-full h-64 object-cover rounded-xl hover:scale-105 transition-transform cursor-pointer">
+</div>
+<div class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=modern%20kitchen%20with%20Japanese%20design%20influence%2C%20clean%20minimalist%20style%2C%20natural%20materials%2C%20contemporary%20appliances%2C%20spacious%20layout&amp;width=400&amp;height=300&amp;seq=gallery004&amp;orientation=landscape"
+alt="Modern Kitchen" class="w-full h-64 object-cover rounded-xl hover:scale-105 transition-transform cursor-pointer">
+</div>
+<div class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=luxury%20bathroom%20with%20Japanese%20spa%20elements%2C%20natural%20stone%2C%20minimalist%20design%2C%20contemporary%20fixtures%2C%20peaceful%20atmosphere&amp;width=400&amp;height=300&amp;seq=gallery005&amp;orientation=landscape"
+alt="Luxury Bathroom" class="w-full h-64 object-cover rounded-xl hover:scale-105 transition-transform cursor-pointer">
+</div>
+<div class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=rooftop%20terrace%20with%20city%20views%2C%20modern%20outdoor%20furniture%2C%20landscaping%20elements%2C%20contemporary%20design%2C%20urban%20living%20space&amp;width=400&amp;height=300&amp;seq=gallery006&amp;orientation=landscape"
+alt="Rooftop Terrace" class="w-full h-64 object-cover rounded-xl hover:scale-105 transition-transform cursor-pointer">
+</div>
+</div>
+</div>
+</section>
+<section id="project" class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="fade-in text-center mb-16">
+<h2 class="text-4xl font-light text-gray-800 mb-6" data-en="Masterplan" data-ar="المخطط الرئيسي" data-ja="マスタープラン">Masterplan</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto" data-en="Discover the thoughtfully designed layout that maximizes space efficiency while maintaining the serene Japanese aesthetic throughout the development." data-ar="اكتشف التخطيط المدروس بعناية الذي يزيد من كفاءة المساحة مع الحفاظ على الجمالية اليابانية الهادئة في جميع أنحاء التطوير." data-ja="開発全体を通じて静寂な日本の美学を維持しながら、空間効率を最大化する思慮深く設計されたレイアウトをご発見ください。">
+Discover the thoughtfully designed layout that maximizes space efficiency while maintaining the serene Japanese aesthetic throughout the development.
+</p>
+</div>
+<div class="fade-in">
+<div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
+<img src="../../static.readdy.ai/image/8b316a119a8a2d6c8b4af9b8a65c7b9d/3b8a39c99fbead0bdc155d8f75da0fa5.jpg"
+alt="Bonsai Masterplan showing building phases and layout design"
+class="w-full h-auto rounded-xl object-contain">
+<div class="mt-8 grid md:grid-cols-3 gap-6 text-center">
+<div class="p-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mx-auto mb-4">
+<i class="ri-building-2-line text-primary text-xl"></i>
+</div>
+<h3 class="font-medium text-gray-800 mb-2" data-en="Multi-Phase Development" data-ar="تطوير متعدد المراحل" data-ja="多段階開発">Multi-Phase Development</h3>
+<p class="text-sm text-gray-600" data-en="Strategically planned phases ensuring optimal construction flow and resident comfort." data-ar="مراحل مخططة استراتيجياً لضمان التدفق الأمثل للبناء وراحة السكان." data-ja="最適な建設フローと住民の快適さを確保する戦略的に計画された段階。">Strategically planned phases ensuring optimal construction flow and resident comfort.</p>
+</div>
+<div class="p-4">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-lg mx-auto mb-4">
+<i class="ri-leaf-line text-secondary text-xl"></i>
+</div>
+<h3 class="font-medium text-gray-800 mb-2" data-en="Green Spaces Integration" data-ar="دمج المساحات الخضراء" data-ja="緑地の統合">Green Spaces Integration</h3>
+<p class="text-sm text-gray-600" data-en="Thoughtfully integrated courtyards and gardens creating peaceful oases throughout the development." data-ar="الفناءات والحدائق المدمجة بعناية تخلق واحات سلمية في جميع أنحاء التطوير." data-ja="開発全体に平和なオアシスを創り出す思慮深く統合された中庭と庭園。">Thoughtfully integrated courtyards and gardens creating peaceful oases throughout the development.</p>
+</div>
+<div class="p-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mx-auto mb-4">
+<i class="ri-road-map-line text-primary text-xl"></i>
+</div>
+<h3 class="font-medium text-gray-800 mb-2" data-en="Efficient Circulation" data-ar="الدورة الفعالة" data-ja="効率的な循環">Efficient Circulation</h3>
+<p class="text-sm text-gray-600" data-en="Well-designed pathways and access routes promoting seamless movement and connectivity." data-ar="مسارات وطرق وصول مصممة جيداً تعزز الحركة السلسة والاتصال." data-ja="シームレスな移動と接続性を促進する、よく設計された通路とアクセスルート。">Well-designed pathways and access routes promoting seamless movement and connectivity.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="fade-in text-center mb-16">
+<h2 class="text-4xl font-light text-gray-800 mb-6" data-en="Contact Us" data-ar="اتصل بنا" data-ja="お問い合わせ">Contact Us</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto" data-en="Get in touch with our team to learn more about investment opportunities and schedule a private viewing." data-ar="تواصل مع فريقنا لمعرفة المزيد عن الفرص الاستثمارية وجدولة مشاهدة خاصة." data-ja="投資機会について詳しく学び、プライベートビューイングをスケジュールするために、私たちのチームにお問い合わせください。">
+Get in touch with our team to learn more about investment opportunities and schedule a private viewing.
+</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-16">
+<div class="fade-in">
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" data-en="First Name" data-ar="الاسم الأول" data-ja="名">First Name</label>
+<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" data-en="Last Name" data-ar="اسم العائلة" data-ja="姓">Last Name</label>
+<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" data-en="Email" data-ar="البريد الإلكتروني" data-ja="メール">Email</label>
+<input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" data-en="Phone" data-ar="الهاتف" data-ja="電話">Phone</label>
+<input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" data-en="Message" data-ar="الرسالة" data-ja="メッセージ">Message</label>
+<textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"></textarea>
+</div>
+<div class="flex items-center space-x-3">
+<input type="checkbox" class="custom-checkbox" id="recaptcha">
+<label for="recaptcha" class="text-sm text-gray-600" data-en="I'm not a robot" data-ar="أنا لست روبوت" data-ja="私はロボットではありません">I'm not a robot</label>
+</div>
+<button type="submit" class="!rounded-button whitespace-nowrap w-full bg-primary text-white py-3 hover:bg-opacity-90 transition-colors cursor-pointer" data-en="Send Message" data-ar="إرسال الرسالة" data-ja="メッセージを送信">
+Send Message
+</button>
+</form>
+</div>
+<div class="fade-in">
+<div class="space-y-8">
+<div>
+<h3 class="text-xl font-medium text-gray-800 mb-4" data-en="Get in Touch" data-ar="تواصل معنا" data-ja="お問い合わせ">Get in Touch</h3>
+<div class="space-y-4">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-600">+966 11 123 4567</span>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-600">info@bonsai.sa</span>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-600" data-en="Riyadh, Saudi Arabia" data-ar="الرياض، المملكة العربية السعودية" data-ja="リヤド、サウジアラビア">Riyadh, Saudi Arabia</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-medium text-gray-800 mb-4" data-en="Office Hours" data-ar="ساعات العمل" data-ja="営業時間">Office Hours</h3>
+<div class="space-y-2 text-gray-600">
+<p data-en="Sunday - Thursday: 9:00 AM - 6:00 PM" data-ar="الأحد - الخميس: 9:00 ص - 6:00 م" data-ja="日曜日 - 木曜日: 9:00 AM - 6:00 PM">Sunday - Thursday: 9:00 AM - 6:00 PM</p>
+<p data-en="Friday - Saturday: Closed" data-ar="الجمعة - السبت: مغلق" data-ja="金曜日 - 土曜日: 閉店">Friday - Saturday: Closed</p>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-medium text-gray-800 mb-4" data-en="Follow Us" data-ar="تابعنا" data-ja="フォローしてください">Follow Us</h3>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-lg hover:bg-opacity-80 transition-colors cursor-pointer">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-lg hover:bg-opacity-80 transition-colors cursor-pointer">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-lg hover:bg-opacity-80 transition-colors cursor-pointer">
+<i class="ri-instagram-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-lg hover:bg-opacity-80 transition-colors cursor-pointer">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<div class="font-['Pacifico'] text-2xl mb-6">logo</div>
+<p class="text-gray-400 mb-6" data-en="Creating harmonious living spaces inspired by Japanese design philosophy and modern luxury." data-ar="خلق مساحات معيشة متناغمة مستوحاة من فلسفة التصميم اليابانية والفخامة الحديثة." data-ja="日本のデザイン哲学とモダンな豪華さにインスパイアされた調和のとれた生活空間を創造。">Creating harmonious living spaces inspired by Japanese design philosophy and modern luxury.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+<i class="ri-facebook-fill text-xl"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+<i class="ri-twitter-fill text-xl"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+<i class="ri-instagram-fill text-xl"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+<i class="ri-linkedin-fill text-xl"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-medium mb-6" data-en="Quick Links" data-ar="روابط سريعة" data-ja="クイックリンク">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#home" class="text-gray-400 hover:text-white transition-colors cursor-pointer" data-en="Home" data-ar="الرئيسية" data-ja="ホーム">Home</a></li>
+<li><a href="#designer" class="text-gray-400 hover:text-white transition-colors cursor-pointer" data-en="Designer" data-ar="المصمم" data-ja="デザイナー">Designer</a></li>
+<li><a href="#serenity" class="text-gray-400 hover:text-white transition-colors cursor-pointer" data-en="Serenity" data-ar="الهدوء" data-ja="静寂">Serenity</a></li>
+<li><a href="#project" class="text-gray-400 hover:text-white transition-colors cursor-pointer" data-en="Project" data-ar="المشروع" data-ja="プロジェクト">Project</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-medium mb-6" data-en="Services" data-ar="الخدمات" data-ja="サービス">Services</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer" data-en="Investment Consultation" data-ar="استشارة استثمارية" data-ja="投資コンサルテーション">Investment Consultation</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer" data-en="Property Management" data-ar="إدارة الممتلكات" data-ja="不動産管理">Property Management</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer" data-en="After Sales Service" data-ar="خدمة ما بعد البيع" data-ja="アフターセールスサービス">After Sales Service</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors cursor-pointer" data-en="Contact Support" data-ar="دعم الاتصال" data-ja="サポートに連絡">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-medium mb-6" data-en="Contact Info" data-ar="معلومات الاتصال" data-ja="連絡先情報">Contact Info</h3>
+<ul class="space-y-3 text-gray-400">
+<li>+966 11 123 4567</li>
+<li>info@bonsai.sa</li>
+<li data-en="Riyadh, Saudi Arabia" data-ar="الرياض، المملكة العربية السعودية" data-ja="リヤド、サウジアラビア">Riyadh, Saudi Arabia</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+<p data-en="© 2024 Bonsai. All rights reserved." data-ar="© 2024 بونساي. جميع الحقوق محفوظة." data-ja="© 2024 Bonsai. 全著作権所有。">&copy; 2024 Bonsai. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script id="scroll-animations">
+document.addEventListener('DOMContentLoaded', function() {
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+const observer = new IntersectionObserver(function(entries) {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, observerOptions);
+document.querySelectorAll('.fade-in').forEach(el => {
+observer.observe(el);
+});
+});
+</script>
+<script id="smooth-scrolling">
+document.addEventListener('DOMContentLoaded', function() {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+});
+</script>
+<script id="language-switcher">
+document.addEventListener('DOMContentLoaded', function() {
+let currentLanguage = 'en';
+const languages = {
+en: 'EN',
+ar: 'AR',
+ja: '日本語'
+};
+const languageButtons = {
+'lang-en': 'en',
+'lang-ar': 'ar',
+'lang-ja': 'ja'
+};
+function updateLanguageButtons() {
+Object.keys(languageButtons).forEach(buttonId => {
+const button = document.getElementById(buttonId);
+const lang = languageButtons[buttonId];
+if (lang === currentLanguage) {
+button.classList.add('language-active');
+button.classList.remove('language-inactive');
+} else {
+button.classList.remove('language-active');
+button.classList.add('language-inactive');
+}
+});
+}
+function updateContent(language) {
+document.querySelectorAll('[data-en]').forEach(element => {
+if (element.hasAttribute(`data-${language}`)) {
+const content = element.getAttribute(`data-${language}`);
+if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+element.placeholder = content;
+} else {
+element.textContent = content;
+}
+}
+});
+if (language === 'ar') {
+document.documentElement.dir = 'rtl';
+document.documentElement.lang = 'ar';
+} else {
+document.documentElement.dir = 'ltr';
+document.documentElement.lang = language;
+}
+}
+Object.keys(languageButtons).forEach(buttonId => {
+const button = document.getElementById(buttonId);
+const language = languageButtons[buttonId];
+button.addEventListener('click', function() {
+currentLanguage = language;
+updateLanguageButtons();
+updateContent(language);
+localStorage.setItem('preferredLanguage', language);
+});
+});
+const savedLanguage = localStorage.getItem('preferredLanguage');
+if (savedLanguage && languages[savedLanguage]) {
+currentLanguage = savedLanguage;
+updateLanguageButtons();
+updateContent(currentLanguage);
+}
+});
+</script>
+<script id="form-handling">
+document.addEventListener('DOMContentLoaded', function() {
+const form = document.querySelector('form');
+const messageTextarea = document.querySelector('textarea');
+if (messageTextarea) {
+const messageCount = document.createElement('div');
+messageCount.className = 'text-gray-400 text-xs mt-1 text-right';
+messageCount.textContent = '0/500';
+messageTextarea.parentNode.appendChild(messageCount);
+messageTextarea.addEventListener('input', function() {
+const count = this.value.length;
+messageCount.textContent = `${count}/500`;
+if (count > 500) {
+messageCount.classList.add('text-red-500');
+messageCount.classList.remove('text-gray-400');
+this.value = this.value.substring(0, 500);
+} else {
+messageCount.classList.remove('text-red-500');
+messageCount.classList.add('text-gray-400');
+}
+});
+}
+if (form) {
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+const submitButton = form.querySelector('button[type="submit"]');
+const originalText = submitButton.textContent;
+const requiredFields = form.querySelectorAll('input[required], textarea[required]');
+let isValid = true;
+requiredFields.forEach(field => {
+if (!field.value.trim()) {
+field.classList.add('border-red-500');
+isValid = false;
+} else {
+field.classList.remove('border-red-500');
+field.classList.add('border-gray-300');
+}
+});
+const emailField = form.querySelector('input[type="email"]');
+if (emailField && emailField.value) {
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailRegex.test(emailField.value)) {
+emailField.classList.add('border-red-500');
+isValid = false;
+}
+}
+const checkbox = document.getElementById('recaptcha');
+if (!checkbox.checked) {
+isValid = false;
+const errorMsg = document.createElement('div');
+errorMsg.className = 'text-red-500 text-xs mt-1';
+errorMsg.textContent = 'Please verify that you are not a robot';
+if (!checkbox.parentNode.querySelector('.text-red-500')) {
+checkbox.parentNode.appendChild(errorMsg);
+}
+}
+if (!isValid) {
+return;
+}
+submitButton.disabled = true;
+submitButton.innerHTML = '<i class="ri-loader-4-line animate-spin mr-2"></i>Sending...';
+setTimeout(() => {
+const successMsg = document.createElement('div');
+successMsg.className = 'p-4 rounded-lg text-sm bg-green-50 border border-green-200 text-green-800 mt-4';
+successMsg.textContent = 'Thank you for your message! We\'ll get back to you within 24 hours.';
+form.appendChild(successMsg);
+form.reset();
+if (messageTextarea) {
+const counter = messageTextarea.parentNode.querySelector('.text-gray-400, .text-red-500');
+if (counter) counter.textContent = '0/500';
+}
+submitButton.disabled = false;
+submitButton.textContent = originalText;
+form.querySelectorAll('.border-red-500').forEach(field => {
+field.classList.remove('border-red-500');
+field.classList.add('border-gray-300');
+});
+if (typeof gtag !== 'undefined') {
+gtag('event', 'form_submit', {
+event_category: 'engagement',
+event_label: 'contact_form'
+});
+}
+setTimeout(() => {
+successMsg.remove();
+}, 5000);
+}, 2000);
+});
+}
+});
+</script>
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
+        api_host: 'https://us.i.posthog.com',
+        autocapture: false,
+        capture_pageview: false,
+        capture_pageleave: false,
+        capture_performance: {
+            web_vitals: false,
+        },
+        rageclick: false,
+    })
+    window.shareKey = 'lH0D0k9g2QICJnaIG95PSg';
+    window.host = 'readdy.ai';
+</script>
+<script src="../../static.readdy.ai/static/share.js"></script></body>
+
+
+</html>
